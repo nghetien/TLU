@@ -1,0 +1,10 @@
+.banner-area {
+    background: url(../img/bg-contact.jpeg) no-repeat;
+    background-size: cover;
+}
+.callto-area {
+    background:url(../img/img-video.jpg);
+    background-size: cover;
+    text-align: center;
+    height: 100%;
+}

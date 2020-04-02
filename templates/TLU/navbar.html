@@ -1,0 +1,47 @@
+{% load static %}
+<!-- Start Header Area -->
+<header class="default-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'TLU/img/logo1.png' %}" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li><a class="active" href="{% url 'home' %}">Trang Chủ</a></li>
+                    <li><a href="{% url 'News' %}">Tin Tức</a></li>
+                    <li><a href="#">Dự Án</a></li>
+                    <li><a href="{% url 'Contact' %}">Liên Hệ</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Thư viện
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog-home.html">Toán</a>
+                            <a class="dropdown-item" href="blog-single.html">Tin</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'Profile' %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'Logout' %}">Logout</a>
+                        </div>
+                    {% else %}
+                        <li><a href="{% url 'Login' %}">Login</a></li>
+                    {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+	<!-- End Header Area -->
